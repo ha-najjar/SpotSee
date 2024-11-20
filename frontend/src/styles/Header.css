@@ -1,0 +1,37 @@
+.header {
+  height: 91px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  padding: 10px 20px;
+}
+
+.header-logo {
+  width: 178px;
+  height: 61px;
+}
+.header-nav {
+  padding-right: 50px;
+}
+
+.header-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 230px;
+  margin: 0;
+  padding: 0;
+}
+
+.header-nav a {
+  color: #fff;
+  text-decoration: none;
+
+  font-weight: 500;
+  font-size: 24px;
+  font-family: Roboto;
+}
+
+.header-nav a:hover {
+  text-decoration: underline;
+}

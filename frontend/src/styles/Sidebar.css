@@ -1,0 +1,48 @@
+.sidebar {
+  background-color: #000;
+  color: #fff;
+  width: 117px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 150px 0 100px 0;
+}
+
+.sidebar-icons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.icon {
+  width: 64px;
+  height: 64px;
+  background-color: #fff;
+  border-radius: 10%;
+}
+
+.icon.yoga {
+  background-image: url("../assets/yoga-icon.png");
+  background-size: cover;
+}
+.icon.swimming {
+  background-image: url("../assets/swimming-icon.png");
+  background-size: cover;
+}
+.icon.cycling {
+  background-image: url("../assets/cycling-icon.png");
+  background-size: cover;
+}
+.icon.weightlifting {
+  background-image: url("../assets/weightlifting-icon.png");
+  background-size: cover;
+}
+
+.sidebar-footer {
+  font-size: 12px;
+  text-align: center;
+  white-space: nowrap;
+  transform: rotate(-90deg);
+}

@@ -1,0 +1,14 @@
+.profile-page-container {
+  width: 1126px;
+  height: 780px;
+  margin: 68px 107px 107px 107px;
+}
+h1 {
+  margin: 0;
+  font-size: 48px;
+  font-weight: 500;
+  font-family: Roboto, sans-serif;
+}
+h1 .user-Name {
+  color: #ff0101;
+}
