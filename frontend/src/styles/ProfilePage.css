@@ -3,6 +3,11 @@
   height: 780px;
   margin: 68px 107px 107px 107px;
 }
+.profile-items {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 h1 {
   margin: 0;
   font-size: 48px;

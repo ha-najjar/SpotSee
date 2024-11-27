@@ -1,0 +1,34 @@
+.nutrition-card {
+  display: flex;
+  align-items: center;
+  background: #f8f8f8;
+  border-radius: 10px;
+
+  margin-bottom: 28px;
+}
+
+.icon-wrapper {
+  border-radius: 50%;
+  width: 258px;
+  height: 124px;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+
+.icon {
+  width: 60px;
+  height: 60px;
+}
+
+.value {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.label {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}
