@@ -1,0 +1,22 @@
+.chart-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px;
+}
+
+.chart-title {
+  font-weight: 500;
+  font-size: 15px;
+  color: #333;
+}
+
+.recharts-tooltip-wrapper {
+  background-color: #e60000;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.recharts-legend-wrapper {
+  width: 277px;
+  height: 25px;
+}

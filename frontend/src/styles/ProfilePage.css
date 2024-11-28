@@ -4,8 +4,9 @@
   margin: 68px 107px 107px 107px;
 }
 .profile-items {
+  margin-top: 70px;
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   justify-content: space-between;
 }
 h1 {
