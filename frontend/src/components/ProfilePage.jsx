@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { getUserData } from "../services/api";
 import NutritionOverview from "./NutritionOverview";
 import DailyActivity from "./DailyActivity";
+import PerformanceChart from "./PerformanceChart";
+import ScoreChart from "./ScoreChart";
 
 import "../styles/ProfilePage.css";
 
@@ -51,6 +53,8 @@ const ProfilePage = () => {
             </div>
             <div>
               <DailyActivity userId={12} />
+              <PerformanceChart userId={12} />
+              <ScoreChart userId={12} />
             </div>
           </div>
         </div>
