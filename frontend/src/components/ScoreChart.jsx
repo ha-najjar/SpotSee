@@ -26,7 +26,8 @@ const ScoreChart = ({ userId }) => {
     <div
       style={{
         position: "relative",
-        width: "258px",
+        padding: "20px",
+
         height: "263px",
         background: "#FBFBFB",
         borderRadius: "5px",
@@ -46,7 +47,7 @@ const ScoreChart = ({ userId }) => {
       >
         Score
       </h2>
-      <ResponsiveContainer width="100%" height="100%">
+      <ResponsiveContainer width="100%" height={200}>
         <PieChart>
           <Pie
             data={data}

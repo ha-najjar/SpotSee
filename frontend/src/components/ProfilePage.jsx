@@ -4,6 +4,7 @@ import NutritionOverview from "./NutritionOverview";
 import DailyActivity from "./DailyActivity";
 import PerformanceChart from "./PerformanceChart";
 import ScoreChart from "./ScoreChart";
+import SessionChart from "./SessionChart";
 
 import "../styles/ProfilePage.css";
 
@@ -51,10 +52,13 @@ const ProfilePage = () => {
             <div>
               <NutritionOverview userId={12} />
             </div>
-            <div>
+            <div className="chart-container">
               <DailyActivity userId={12} />
-              <PerformanceChart userId={12} />
-              <ScoreChart userId={12} />
+              <div className="charts">
+                <SessionChart userId={12} />
+                <PerformanceChart userId={12} />
+                <ScoreChart userId={12} />
+              </div>
             </div>
           </div>
         </div>

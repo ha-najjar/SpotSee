@@ -54,12 +54,37 @@ const CustomLegend = ({ payload }) => (
     </ul>
   </div>
 );
+const CustomTooltip = ({ active, payload }) => {
+  if (active && payload && payload.length) {
+    return (
+      <div
+        style={{
+          backgroundColor: "#FF0000",
+          padding: "10px",
+          color: "#FFF",
+        }}
+      >
+        <p>{`${payload[0].value}kg`}</p>
+        <p>{`${payload[1].value}Kcal`}</p>
+      </div>
+    );
+  }
+
+  return null;
+};
 
 const DailyActivityChart = ({ userId }) => {
   const data = getUserActivity(userId);
 
   return (
-    <div className="chart-container" style={{ position: "relative" }}>
+    <div
+      style={{
+        position: "relative",
+        backgroundColor: "#fbfbfb",
+        borderRadius: 10,
+        paddingTop: 24,
+      }}
+    >
       <h3
         x={20}
         y={20}
@@ -69,6 +94,7 @@ const DailyActivityChart = ({ userId }) => {
           fontSize: "15px",
           fontWeight: "500",
           marginLeft: "20px",
+          marginTop: "0",
         }}
       >
         Activité quotidienne
@@ -81,7 +107,11 @@ const DailyActivityChart = ({ userId }) => {
         margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
       >
         <CartesianGrid horizontal={true} vertical={false} strokeDasharray="3" />
-        <XAxis dataKey="day" />
+        <XAxis
+          dataKey="day"
+          tickLine={false}
+          axisLine={{ stroke: "#DEDEDE" }}
+        />
         <YAxis
           yAxisId="left"
           orientation="left"
@@ -91,13 +121,15 @@ const DailyActivityChart = ({ userId }) => {
         />
         <YAxis
           axisLine={false}
+          tickLine={false}
           yAxisId="right"
           orientation="right"
           dataKey="kilogram"
-          unit="kg"
           domain={[50, 100]}
+          tickMargin={20}
+          tickCount={3}
         />
-        <Tooltip />
+        <Tooltip content={<CustomTooltip />} />
         <Bar
           yAxisId="right"
           dataKey="kilogram"
