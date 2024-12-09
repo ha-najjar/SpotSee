@@ -29,10 +29,10 @@ const PerformanceChart = ({ userId }) => {
         backgroundColor: "#282D30",
         padding: "20px",
         borderRadius: "5px",
-        height: 263,
+        height: 223,
       }}
     >
-      <ResponsiveContainer width="100%" height={270}>
+      <ResponsiveContainer width="100%" height={230}>
         <RadarChart cx="50%" cy="50%" outerRadius="80%" data={radarData}>
           <PolarGrid radialLines={false} />
           <PolarAngleAxis

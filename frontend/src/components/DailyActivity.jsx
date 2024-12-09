@@ -23,7 +23,7 @@ const CustomLegend = ({ payload }) => (
       alignItems: "center",
       padding: "10px",
       position: "absolute",
-      top: 10,
+      top: 6,
       right: 20,
       zIndex: 10,
     }}
@@ -82,7 +82,7 @@ const DailyActivityChart = ({ userId }) => {
         position: "relative",
         backgroundColor: "#fbfbfb",
         borderRadius: 10,
-        paddingTop: 24,
+        paddingTop: 16,
       }}
     >
       <h3
@@ -101,9 +101,8 @@ const DailyActivityChart = ({ userId }) => {
       </h3>
       <BarChart
         width={835}
-        height={320}
+        height={248}
         data={data}
-        barSize={7}
         margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
       >
         <CartesianGrid horizontal={true} vertical={false} strokeDasharray="3" />
@@ -118,6 +117,7 @@ const DailyActivityChart = ({ userId }) => {
           dataKey="calories"
           unit="kcal"
           hide="true"
+          domain={["dataMin - 20", "dataMax + 10"]}
         />
         <YAxis
           axisLine={false}
@@ -125,24 +125,26 @@ const DailyActivityChart = ({ userId }) => {
           yAxisId="right"
           orientation="right"
           dataKey="kilogram"
-          domain={[50, 100]}
+          domain={["dataMin - 2", "dataMax + 1"]}
           tickMargin={20}
-          tickCount={3}
+          tickCount={4}
+          tick={{ fontSize: 14 }}
+          dx={15}
         />
         <Tooltip content={<CustomTooltip />} />
         <Bar
           yAxisId="right"
           dataKey="kilogram"
-          fill="#000"
-          name="Poids (kg)"
-          radius={[10, 10, 0, 0]}
+          fill="#282D30"
+          barSize={7}
+          radius={[50, 50, 0, 0]}
         />
         <Bar
           yAxisId="left"
           dataKey="calories"
-          fill="#FF0000"
-          radius={[10, 10, 0, 0]}
-          name="Calories brûlées (kcal)"
+          fill="#E60000"
+          barSize={7}
+          radius={[50, 50, 0, 0]}
         />
       </BarChart>
       <CustomLegend

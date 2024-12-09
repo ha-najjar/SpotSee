@@ -39,38 +39,48 @@ const SessionChart = ({ userId }) => {
     <div
       style={{
         backgroundColor: "#FF0000",
-
-        padding: 20,
+        paddingTop: 20,
+        paddingBottom: 20,
         color: "#fff",
-        height: 263,
-
         borderRadius: "5px",
+        height: 223,
       }}
     >
       <h2
         style={{
+          width: 148,
+          height: 57,
           fontSize: 15,
-          marginBottom: 10,
+          margin: 0,
           fontWeight: 500,
           color: " #FFFFFF",
+          paddingRight: 20,
         }}
       >
         Durée moyenne des sessions
       </h2>
-      <ResponsiveContainer width="100%" height={200}>
+      <ResponsiveContainer width="100%" height={180}>
         <LineChart data={sessionsData}>
           <XAxis
             dataKey="day"
             tick={{ fill: "#fff" }}
+            padding={{ right: 5, left: 5 }}
             tickLine={false}
             axisLine={false}
           />
-          <Tooltip content={<CustomTooltip />} cursor={false} />
+          <Tooltip
+            content={<CustomTooltip />}
+            cursor={{
+              stroke: "black",
+              strokeOpacity: 0.08,
+              strokeWidth: 30,
+            }}
+          />
           <Line
             type="monotone"
             dataKey="sessionLength"
             stroke="#fff"
-            dot={{ stroke: "#fff", strokeWidth: 2 }}
+            dot={false}
           />
         </LineChart>
       </ResponsiveContainer>

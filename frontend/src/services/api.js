@@ -1,15 +1,62 @@
 import axios from "axios";
 
-export const getUserData = async (userId) => {
+const api = axios.create({
+  baseURL: `http://localhost:3000/`,
+});
+
+/**
+ * Retrieve user activity
+ * @param {string} id
+ * @returns {Array}
+ */
+export const getUserActivity = async (id) => {
   try {
-    const response = await axios.get(`http://localhost:3000/user/${userId}`);
-    // Retourne uniquement les données pertinentes
-    return response.data;
-  } catch (error) {
-    console.error(
-      "Erreur lors de la récupération des données utilisateur :",
-      error
-    );
-    throw error;
+    const res = await api.get(`user/${id}/activity`);
+    return res.data;
+  } catch (e) {
+    console.log(e);
+  }
+};
+/**
+ * Get User Infos
+ * @param {string} id
+ * @returns {object}
+ */
+
+export const getUserMainData = async (id) => {
+  try {
+    const res = await api.get(`user/${id}`);
+    return res.data;
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+/**
+ * Get User Performance
+ * @param {string} id
+ * @returns {object}
+ */
+
+export const getUserPerformance = async (id) => {
+  try {
+    const res = await api.get(`user/${id}/performance`);
+    return res.data;
+  } catch (e) {
+    console.log(e);
+  }
+};
+/**
+ * Get User Average Session
+ * @param {string} id
+ * @returns {object}
+ */
+
+export const getUserAverageSessions = async (id) => {
+  try {
+    const res = await api.get(`user/${id}/average-sessions`);
+    return res.data;
+  } catch (e) {
+    console.log(e);
   }
 };
